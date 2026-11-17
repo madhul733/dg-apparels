@@ -1664,3 +1664,156 @@ select:focus-visible {
     border-bottom: 1px solid #d8d1c4;
   }
 }
+
+/* ===== DG LEADERSHIP ===== */
+
+.leadership-section {
+  background: #f5f2ec;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 900px;
+  margin: 55px auto 0;
+}
+
+.leader-card {
+  background: #fff;
+  padding: 13px;
+  transition: transform .3s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-7px);
+}
+
+.leader-image {
+  height: 420px;
+  overflow: hidden;
+  background: #e9e4dc;
+}
+
+.leader-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+
+.leader-card:hover .leader-image img {
+  transform: scale(1.04);
+}
+
+.leader-card > span {
+  display: block;
+  margin-top: 20px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #a17b5b;
+}
+
+.leader-card h3 {
+  font-size: 26px;
+  margin: 8px 0 0;
+}
+
+.leader-card p {
+  color: #888;
+  margin: 2px 0 12px;
+}
+
+/* ===== DG INFRASTRUCTURE ===== */
+
+.infrastructure-section {
+  background: #f8f7f3;
+}
+
+.infrastructure-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 45px;
+}
+
+.infrastructure-card {
+  grid-column: span 2;
+  background: #fff;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.infrastructure-card.infra-large,
+.infrastructure-card.infra-wide {
+  grid-column: span 3;
+}
+
+.infrastructure-card img {
+  width: 100%;
+  height: 290px;
+  display: block;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.infrastructure-card:hover img {
+  transform: scale(1.04);
+}
+
+.infrastructure-card span {
+  display: block;
+  padding: 15px 5px 8px;
+  color: #a17b5b;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 650px) {
+  .leadership-grid {
+    gap: 12px;
+  }
+
+  .leader-card {
+    padding: 8px;
+  }
+
+  .leader-image {
+    height: 240px;
+  }
+
+  .leader-card h3 {
+    font-size: 19px;
+  }
+
+  .leader-card > span {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .infrastructure-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .infrastructure-card,
+  .infrastructure-card.infra-large,
+  .infrastructure-card.infra-wide {
+    grid-column: span 1;
+  }
+
+  .infrastructure-card img {
+    height: 180px;
+  }
+
+  .infrastructure-card.infra-wide {
+    grid-column: span 2;
+  }
+
+  .infrastructure-card.infra-wide img {
+    height: 230px;
+  }
+}

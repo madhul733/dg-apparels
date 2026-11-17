@@ -1,14 +1,32 @@
-
 import React, { useMemo, useState } from "react";
 
 import {
-  ArrowUpRight, ArrowRight, Menu, X, Search,
-  Send, CheckCircle2, Mail,
-  Phone, ChevronDown, Plus, Sparkles,
-  Layers3, ShieldCheck, Truck, Factory
+  ArrowUpRight,
+  ArrowRight,
+  Menu,
+  X,
+  Search,
+  Send,
+  CheckCircle2,
+  Mail,
+  Phone,
+  Sparkles,
+  Layers3,
+  ShieldCheck,
+  Truck,
+  Factory
 } from "lucide-react";
 
 import "./App.css";
+
+// IMAGE IMPORTS
+import owner from "./assets/owner.png";
+import manager from "./assets/manager.png";
+import office from "./assets/offc.jpeg";
+import office1 from "./assets/offc1.jpeg";
+import office2 from "./assets/offc2.jpeg";
+import office3 from "./assets/offc3.jpeg";
+import office4 from "./assets/offc4.jpeg";
 
 const EMAIL = "dgapparels092@gmail.com";
 const WHATSAPP = "917696799906";
@@ -109,7 +127,6 @@ const categories = [
   "Circular Knit",
   "Warp Knit"
 ];
-
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All Fabrics");
@@ -196,11 +213,6 @@ export default function App() {
   }
 
   const handleWhatsApp = () => {
-    if (WHATSAPP === "91XXXXXXXXXX") {
-      showAlert("Add your WhatsApp number in App.jsx first.", "error");
-      return;
-    }
-
     window.open(
       `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
         "Hello DG APPARELS! I want to enquire about your fabrics."
@@ -237,6 +249,8 @@ export default function App() {
         <nav className={menuOpen ? "nav-menu open" : "nav-menu"}>
           <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="#about" onClick={() => setMenuOpen(false)}>Our Story</a>
+          <a href="#leadership" onClick={() => setMenuOpen(false)}>Leadership</a>
+          <a href="#infrastructure" onClick={() => setMenuOpen(false)}>Our Facility</a>
           <a href="#collection" onClick={() => setMenuOpen(false)}>Collections</a>
           <a href="#expertise" onClick={() => setMenuOpen(false)}>Expertise</a>
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
@@ -258,10 +272,9 @@ export default function App() {
         </button>
       </header>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="hero" id="home">
         <div className="hero-image" />
-
         <div className="hero-overlay" />
 
         <div className="hero-content">
@@ -322,7 +335,6 @@ export default function App() {
         <span>✳</span>
         <div>CRAFTSMANSHIP</div>
       </section>
-
       {/* ABOUT */}
       <section className="about-section section-space" id="about">
         <div className="section-topline">
@@ -332,9 +344,7 @@ export default function App() {
 
         <div className="about-layout">
           <div className="about-heading">
-            <span className="eyebrow-dark">
-              MORE THAN JUST FABRIC
-            </span>
+            <span className="eyebrow-dark">MORE THAN JUST FABRIC</span>
 
             <h2>
               Every thread
@@ -366,36 +376,140 @@ export default function App() {
 
         <div className="about-image-grid">
           <div className="about-image large-image">
-            <img
-              src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=1200"
-              alt="Premium textile material"
-            />
-            <span>01 — THE DETAILS MATTER</span>
+            <img src={office} alt="DG Apparels Office" loading="lazy" />
+            <span>01 — OUR WORKSPACE</span>
           </div>
 
           <div className="about-image small-image">
-            <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900"
-              alt="Textile fabric closeup"
-            />
-            <span>02 — TEXTURE & FORM</span>
+            <img src={office1} alt="DG Apparels Facility" loading="lazy" />
+            <span>02 — OUR FACILITY</span>
           </div>
         </div>
       </section>
 
+      {/* LEADERSHIP */}
+      <section className="leadership-section section-space" id="leadership">
+        <div className="section-topline">
+          <span>02 / OUR LEADERSHIP</span>
+          <span>THE PEOPLE BEHIND DG</span>
+        </div>
+
+        <div className="leadership-heading">
+          <span className="eyebrow-dark">MEET OUR TEAM</span>
+
+          <h2>
+            People behind
+            <br />
+            <em>our vision.</em>
+          </h2>
+
+          <p>
+            Strong leadership, dedicated management and a shared
+            commitment to quality.
+          </p>
+        </div>
+
+        <div className="leadership-grid">
+          <div className="leader-card">
+            <div className="leader-image">
+              <img src={owner} alt="DG Apparels Owner" loading="lazy" />
+            </div>
+
+            <div className="leader-details">
+              <span>01 — FOUNDER</span>
+              <h3>Our Owner</h3>
+              <p>Owner / Founder</p>
+            </div>
+          </div>
+
+          <div className="leader-card">
+            <div className="leader-image">
+              <img src={manager} alt="DG Apparels Manager" loading="lazy" />
+            </div>
+
+            <div className="leader-details">
+              <span>02 — MANAGEMENT</span>
+              <h3>Our Manager</h3>
+              <p>Manager</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+   
+{/* INFRASTRUCTURE */}
+<section
+  className="infrastructure-section section-space"
+  id="infrastructure"
+>
+  <div className="section-topline">
+    <span>03 / OUR INFRASTRUCTURE</span>
+    <span>INSIDE DG APPARELS</span>
+  </div>
+
+  <div className="infrastructure-heading">
+    <span className="eyebrow-dark">OUR WORKSPACE</span>
+
+    <h2>
+      Where ideas meet
+      <br />
+      <em>craftsmanship.</em>
+    </h2>
+
+    <p>
+      A glimpse into our workplace, facilities and the
+      environment where quality takes shape.
+    </p>
+  </div>
+
+  <div className="infrastructure-grid">
+
+    <div className="infrastructure-card">
+      <img
+        src={office2}
+        alt="DG Apparels Workplace"
+        loading="lazy"
+      />
+      <div className="infra-overlay">
+        <span>01 — OUR WORKSPACE</span>
+      </div>
+    </div>
+
+    <div className="infrastructure-card">
+      <img
+        src={office3}
+        alt="DG Apparels Infrastructure"
+        loading="lazy"
+      />
+      <div className="infra-overlay">
+        <span>02 — OUR INFRASTRUCTURE</span>
+      </div>
+    </div>
+
+    <div className="infrastructure-card infra-wide">
+      <img
+        src={office4}
+        alt="DG Apparels Factory"
+        loading="lazy"
+      />
+      <div className="infra-overlay">
+        <span>03 — OUR OPERATIONS</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
       {/* COLLECTION */}
       <section className="collection-section section-space" id="collection">
         <div className="section-topline light-topline">
-          <span>02 / THE COLLECTION</span>
+          <span>04 / THE COLLECTION</span>
           <span>EXPLORE OUR MATERIALS</span>
         </div>
 
         <div className="collection-heading">
           <div>
-            <span className="eyebrow-light">
-              FIND YOUR PERFECT MATERIAL
-            </span>
-
+            <span className="eyebrow-light">FIND YOUR PERFECT MATERIAL</span>
             <h2>
               The fabric
               <br />
@@ -409,14 +523,15 @@ export default function App() {
           </p>
         </div>
 
-        {/* FILTERS */}
         <div className="collection-controls">
           <div className="category-tabs">
             {categories.map((category) => (
               <button
                 key={category}
                 className={
-                  activeCategory === category ? "category-tab selected" : "category-tab"
+                  activeCategory === category
+                    ? "category-tab selected"
+                    : "category-tab"
                 }
                 onClick={() => setActiveCategory(category)}
               >
@@ -436,13 +551,9 @@ export default function App() {
           </label>
         </div>
 
-        {/* FABRIC CARDS */}
         <div className="product-grid">
           {filteredFabrics.map((fabric, index) => (
-            <article
-              className="product-card"
-              key={fabric.id}
-            >
+            <article className="product-card" key={fabric.id}>
               <div className="product-image-wrap">
                 <img
                   src={fabric.image}
@@ -454,9 +565,7 @@ export default function App() {
                   }}
                 />
 
-                <span className="product-label">
-                  {fabric.label}
-                </span>
+                <span className="product-label">{fabric.label}</span>
 
                 <button
                   className="product-quick"
@@ -467,17 +576,13 @@ export default function App() {
                 </button>
 
                 <span className="product-number">
-                  0{index + 1}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
 
               <div className="product-info">
-                <div className="product-code">
-                  {fabric.code}
-                </div>
-
+                <div className="product-code">{fabric.code}</div>
                 <h3>{fabric.name}</h3>
-
                 <p>{fabric.description}</p>
 
                 <div className="product-specs">
@@ -487,9 +592,7 @@ export default function App() {
 
                 <button
                   className="product-enquire"
-                  onClick={() =>
-                    openForm("Fabric Enquiry", fabric.name)
-                  }
+                  onClick={() => openForm("Fabric Enquiry", fabric.name)}
                 >
                   ENQUIRE ABOUT THIS FABRIC
                   <ArrowUpRight size={16} />
@@ -518,23 +621,21 @@ export default function App() {
 
         <div className="collection-footer">
           <span>CRAFTED FOR CREATORS. SELECTED FOR QUALITY.</span>
+
           <button onClick={() => openForm("Complete Collection Enquiry")}>
             EXPLORE WITH OUR TEAM <ArrowUpRight size={16} />
           </button>
         </div>
       </section>
-
       {/* EXPERTISE */}
       <section className="expertise-section section-space" id="expertise">
         <div className="section-topline">
-          <span>03 / WHAT WE DO</span>
+          <span>05 / WHAT WE DO</span>
           <span>OUR EXPERTISE</span>
         </div>
 
         <div className="expertise-heading">
-          <span className="eyebrow-dark">
-            QUALITY IS IN THE DETAILS
-          </span>
+          <span className="eyebrow-dark">QUALITY IS IN THE DETAILS</span>
 
           <h2>
             Thoughtful materials.
@@ -621,15 +722,13 @@ export default function App() {
       {/* CONTACT */}
       <section className="contact-section section-space" id="contact">
         <div className="section-topline">
-          <span>04 / GET IN TOUCH</span>
+          <span>06 / GET IN TOUCH</span>
           <span>WE'D LOVE TO HEAR FROM YOU</span>
         </div>
 
         <div className="contact-layout">
           <div className="contact-left">
-            <span className="eyebrow-dark">
-              LET'S CONNECT
-            </span>
+            <span className="eyebrow-dark">LET'S CONNECT</span>
 
             <h2>
               Good ideas
@@ -668,24 +767,21 @@ export default function App() {
               className="contact-action"
               onClick={() => openForm("General Enquiry")}
             >
-              GENERAL ENQUIRY
-              <ArrowUpRight />
+              GENERAL ENQUIRY <ArrowUpRight />
             </button>
 
             <button
               className="contact-action"
               onClick={() => openForm("Sample Request")}
             >
-              REQUEST A SAMPLE
-              <ArrowUpRight />
+              REQUEST A SAMPLE <ArrowUpRight />
             </button>
 
             <button
               className="contact-action"
               onClick={() => openForm("Bulk Order Enquiry")}
             >
-              BULK ORDER ENQUIRY
-              <ArrowUpRight />
+              BULK ORDER ENQUIRY <ArrowUpRight />
             </button>
 
             <div className="contact-note">
@@ -695,8 +791,7 @@ export default function App() {
           </div>
         </div>
       </section>
-
-      {/* FOOTER */}
+       {/* FOOTER */}
       <footer className="footer">
         <div className="footer-main">
           <a href="#home" className="logo footer-logo">
@@ -766,7 +861,6 @@ export default function App() {
               </span>
 
               <h2>{activeFabric.name}</h2>
-
               <p>{activeFabric.description}</p>
 
               <div className="modal-specs">
@@ -887,14 +981,17 @@ export default function App() {
                 <label>FABRIC INTEREST</label>
                 <select
                   name="fabric"
-                  defaultValue={selectedFabric}
+                  value={selectedFabric}
+                  onChange={(e) => setSelectedFabric(e.target.value)}
                 >
                   <option value="">Select a fabric</option>
+
                   {fabrics.map((fabric) => (
                     <option key={fabric.id} value={fabric.name}>
                       {fabric.name}
                     </option>
                   ))}
+
                   <option value="Other">Other / Not sure</option>
                 </select>
               </div>
